@@ -11,18 +11,17 @@ def rgbToHex(RGB):
     return strs
 
 
-picturs = os.listdir("C:/Users/v_yruian/Desktop/new/excel_drawing/picturs")
+picturs = os.listdir("C:/Users/***/Desktop/new/excel_drawing/picturs")
 
 for pic in picturs:
-    im = Image.open(
-        "C:/Users/v_yruian/Desktop/new/excel_drawing/picturs/%s" % pic)
+    im = Image.open("C:/Users/***/Desktop/new/excel_drawing/picturs/%s" % pic)
     imdata = im.getdata()  # 获取图片像素的RGB值，这个值是一个包含261*193个像素点（252,235,255）的数组对象
     imnp = np.array(imdata)  # 将数组对象转换成np数组（一个二维数组，维度是（261*193,3））
     imarray = imnp.reshape(im.size[1], im.size[0], 3)   # 改变数组形状
 
     pic_name = pic.split('.')
     wb = xlsxwriter.Workbook(
-        "C:/Users/v_yruian/Desktop/new/excel_drawing/excels/%s.xlsx" % pic.split('.')[0])
+        "C:/Users/***/Desktop/new/excel_drawing/excels/%s.xlsx" % pic.split('.')[0])
     ws = wb.add_worksheet("image")
 
     ws.hide_gridlines(2)   # 隐藏线框
