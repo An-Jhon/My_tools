@@ -1,0 +1,118 @@
+<mxfile host="65bd71144e">
+    <diagram id="l0-A8_g5PncMjfIjgz5y" name="第 1 页">
+        <mxGraphModel dx="421" dy="-3323" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" background="none" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="110" value="" style="group" parent="1" vertex="1" connectable="0">
+                    <mxGeometry x="3088" y="5329" width="920" height="760" as="geometry"/>
+                </mxCell>
+                <mxCell id="71" value="main" style="rounded=1;whiteSpace=wrap;html=1;" parent="110" vertex="1">
+                    <mxGeometry y="140" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="72" value="数据处理函数&lt;br&gt;pretreatment" style="rounded=1;whiteSpace=wrap;html=1;" parent="110" vertex="1">
+                    <mxGeometry x="200" y="140" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="73" value="" style="edgeStyle=none;html=1;" parent="110" source="71" target="72" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="74" value="参数训练函数&lt;br&gt;train_model" style="rounded=1;whiteSpace=wrap;html=1;" parent="110" vertex="1">
+                    <mxGeometry x="400" y="140" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="75" value="" style="edgeStyle=none;html=1;" parent="110" source="72" target="74" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="76" value="参数组合生成器&lt;br&gt;sarima_configs" style="rounded=1;whiteSpace=wrap;html=1;" parent="110" vertex="1">
+                    <mxGeometry x="400" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="77" value="" style="edgeStyle=none;html=1;" parent="110" source="74" target="76" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="78" value="网格搜索确定参数&lt;br&gt;grid_search" style="rounded=1;whiteSpace=wrap;html=1;" parent="110" vertex="1">
+                    <mxGeometry x="400" y="280" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="80" value="模型评估函数&lt;br&gt;score_model" style="rounded=1;whiteSpace=wrap;html=1;" parent="110" vertex="1">
+                    <mxGeometry x="400" y="420" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="82" value="测试数据前向滚动预测函数&lt;br&gt;forward_valid" style="rounded=1;whiteSpace=wrap;html=1;" parent="110" vertex="1">
+                    <mxGeometry x="400" y="560" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="84" value="数据集切分函数&lt;br&gt;train_test_split" style="rounded=1;whiteSpace=wrap;html=1;" parent="110" vertex="1">
+                    <mxGeometry x="200" y="560" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="86" value="数据预测函数&lt;br&gt;model_forecast" style="rounded=1;whiteSpace=wrap;html=1;" parent="110" vertex="1">
+                    <mxGeometry x="400" y="700" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="88" value="评分函数&lt;br&gt;mape" style="rounded=1;whiteSpace=wrap;html=1;" parent="110" vertex="1">
+                    <mxGeometry x="600" y="560" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="91" value="" style="endArrow=classic;startArrow=classic;html=1;" parent="110" source="82" target="80" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="393" y="528" as="sourcePoint"/>
+                        <mxPoint x="443" y="478" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="92" value="返回参数和评分值" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;" parent="110" vertex="1">
+                    <mxGeometry x="465" y="505" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="93" value="返回评分最好的最优参数" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;" parent="110" vertex="1">
+                    <mxGeometry x="394" y="225" width="151" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="94" value="预测函数&lt;br&gt;forecast_model" style="rounded=1;whiteSpace=wrap;html=1;" parent="110" vertex="1">
+                    <mxGeometry x="600" y="140" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="96" value="预测值前向滚动预测函数&lt;br&gt;forecast_model" style="rounded=1;whiteSpace=wrap;html=1;" parent="110" vertex="1">
+                    <mxGeometry x="600" y="280" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="100" value="返回指定预测周期的预测值" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;" parent="110" vertex="1">
+                    <mxGeometry x="669" y="222" width="151" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="101" value="end" style="rounded=1;whiteSpace=wrap;html=1;" parent="110" vertex="1">
+                    <mxGeometry x="800" y="140" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="104" value="" style="endArrow=classic;startArrow=classic;html=1;" parent="110" source="84" target="82" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="608" y="454" as="sourcePoint"/>
+                        <mxPoint x="658" y="404" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="105" value="" style="endArrow=classic;startArrow=classic;html=1;" parent="110" source="96" target="94" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="553" y="423" as="sourcePoint"/>
+                        <mxPoint x="603" y="373" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="106" value="" style="endArrow=classic;startArrow=classic;html=1;" parent="110" source="78" target="74" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="573" y="280" as="sourcePoint"/>
+                        <mxPoint x="623" y="230" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="107" value="" style="endArrow=classic;startArrow=classic;html=1;" parent="110" source="80" target="78" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="573" y="443" as="sourcePoint"/>
+                        <mxPoint x="623" y="393" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="95" value="" style="edgeStyle=none;html=1;" parent="110" source="74" target="94" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="108" value="" style="endArrow=classic;startArrow=classic;html=1;" parent="110" source="82" target="88" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="597" y="557" as="sourcePoint"/>
+                        <mxPoint x="647" y="507" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="102" value="" style="edgeStyle=none;html=1;" parent="110" source="94" target="101" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="109" value="" style="endArrow=classic;startArrow=classic;html=1;" parent="110" source="86" target="82" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="628" y="474" as="sourcePoint"/>
+                        <mxPoint x="678" y="424" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
