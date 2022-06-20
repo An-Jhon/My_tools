@@ -48,4 +48,3 @@ for pic in picturs:
 print('绘画完毕！')
 
 
-？？？
