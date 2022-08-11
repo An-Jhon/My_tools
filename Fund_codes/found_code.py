@@ -21,6 +21,7 @@ def get_data(url, is_estimate):
     r = requests.get(url, headers=headers)
     # 返回信息
     content = r.text
+    print(url, content)
     
     if is_estimate:            
         # 正则表达式
@@ -34,6 +35,8 @@ def get_data(url, is_estimate):
         # 查找结果
         search = re.findall(pattern, content)
         # search的形状是['{},{},{},{}']，但是loads能处理的形状是：1、json中只有一个字典的情况：'{}' 或者 2、json中只有多个字典的情况'[{},{},{},{}]'
+        print(search)
+        print(search[0])
         search = '[' + search[0] + ']'
         data = json.loads(search)
         data = data[::-1]   # 列表反转
@@ -54,7 +57,7 @@ def timeTransformation(datetime):
 def write_history_data(history_data, sheet):
     # 历史数据写入：如果历史数据条数小于30，重新写入数据；否则将昨天的预估数据更新为实际历史数据
     if len(sheet['A'])<30:
-        for r in range(0,30):
+        for r in range(len(history_data)):
             # 日期
             date = timeTransformation(int(history_data[r]['x']/1000))
             sheet.cell(row=r+4, column=1).value = date
@@ -113,7 +116,7 @@ codes = ['161725', '005827', '003095']
 # codes = ['005827']
 
 # 获取表格对象
-workbook = load_workbook('/Users/ayd/Desktop/基金数据买卖点.xlsx')
+workbook = load_workbook('/Users/ayd/Desktop/Github_Repositorys/MyOwn/My_tools/Fund_codes/基金数据买卖点all.xlsx')
 sheetnames = workbook.sheetnames
 
 for code in codes:
@@ -151,4 +154,4 @@ for code in codes:
     whetherNotToBuy(sheet)
 
 
-workbook.save('/Users/ayd/Desktop/基金数据买卖点.xlsx')
+workbook.save('/Users/ayd/Desktop/Github_Repositorys/MyOwn/My_tools/Fund_codes/基金数据买卖点all.xlsx')
