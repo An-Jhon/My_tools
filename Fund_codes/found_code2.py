@@ -5,8 +5,6 @@ import time
 import warnings
 import requests
 import datetime
-import numpy as np
-import pandas as pd
 import openpyxl   # versiong==2.4.9，使用3.0.9、3.0.10读取excel表格会报错
 from openpyxl import load_workbook
 
@@ -22,7 +20,7 @@ headers = {'content-type': 'application/json; charset=utf-8',
 def get_data(url):
     r = requests.get(url, headers=headers)
     # 返回信息
-    content = r.text
+    content = r.condatext
     # 正则表达式
     pattern = r'^jsonpgz\((.*)\)'
     # 查找结果
