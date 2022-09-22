@@ -20,7 +20,7 @@ headers = {'content-type': 'application/json; charset=utf-8',
 def get_data(url):
     r = requests.get(url, headers=headers)
     # 返回信息
-    content = r.condatext
+    content = r.text
     # 正则表达式
     pattern = r'^jsonpgz\((.*)\)'
     # 查找结果
