@@ -57,7 +57,7 @@ def write_history_data(estimate_data, sheet):
         sheet.cell(row=row, column=3).value = round(((sheet.cell(row=row, column=2).value - sheet.cell(row=row+1, column=2).value) / sheet.cell(row=row+1, column=2).value) * 100, 2)
     
     
-# 计算累计涨跌幅
+# 计算加仓之后累计涨跌幅
 def whetherNotToBuy(sheet):
     # 获取E列数据
     is_E = [i.value for i in sheet['E']]
@@ -72,7 +72,6 @@ def whetherNotToBuy(sheet):
         else:
             sheet[f'E{row-i}'] = 1
         # print(sheet[f'E{row}'].value)
-        
         
 codes = ['161725', '005827', '003095']
 # codes = ['005827']
@@ -101,7 +100,7 @@ for code in codes:
     sheet['C2'] = '净值涨跌'
     sheet['D2'] = '自上次买入累计涨跌'
     sheet['E2'] = '是否买入'
-    sheet['F2'] = '买入金额'    
+    sheet['F2'] = '买入金额'  
 
     # 表中已有的数据的所有日期
     all_date = [sheet['A'][a].value for a in range(len(sheet['A']))][2:]
