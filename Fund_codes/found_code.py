@@ -21,7 +21,7 @@ def get_data(url, is_estimate):
     r = requests.get(url, headers=headers)
     # 返回信息
     content = r.text
-    print(url, content)
+    # print(url, content)
     
     if is_estimate:            
         # 正则表达式
@@ -35,8 +35,8 @@ def get_data(url, is_estimate):
         # 查找结果
         search = re.findall(pattern, content)
         # search的形状是['{},{},{},{}']，但是loads能处理的形状是：1、json中只有一个字典的情况：'{}' 或者 2、json中只有多个字典的情况'[{},{},{},{}]'
-        print(search)
-        print(search[0])
+        # print(search)
+        # print(search[0])
         search = '[' + search[0] + ']'
         data = json.loads(search)
         data = data[::-1]   # 列表反转
@@ -60,11 +60,11 @@ def write_history_data(history_data, sheet):
         for r in range(len(history_data)):
             # 日期
             date = timeTransformation(int(history_data[r]['x']/1000))
-            sheet.cell(row=r+4, column=1).value = date
+            sheet.cell(row=r+3, column=1).value = date
             # 净值
-            sheet.cell(row=r+4, column=2).value = history_data[r]['y']
+            sheet.cell(row=r+3, column=2).value = history_data[r]['y']
             # 涨幅
-            sheet.cell(row=r+4, column=3).value = history_data[r]['equityReturn']
+            sheet.cell(row=r+3, column=3).value = history_data[r]['equityReturn']
     else:
         latestDate = timeTransformation(int(history_data[0]['x']/1000))
         if latestDate not in all_date:
@@ -112,7 +112,7 @@ def whetherNotToBuy(sheet):
         # print(sheet[f'E{row}'].value)
         
         
-codes = ['161725', '005827', '003095']
+codes = ['161725', '005827', '003095','002670','004788']
 # codes = ['005827']
 
 # 获取表格对象
@@ -155,3 +155,5 @@ for code in codes:
 
 
 workbook.save('/Users/ayd/Desktop/Github_Repositorys/MyOwn/My_tools/Fund_codes/基金数据买卖点all.xlsx')
+
+print('完成')
